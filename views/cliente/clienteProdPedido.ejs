@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro :: Meu Pedido</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+                <div class="row g-3">
+                    
+                    <div class="col-12 col-sm-6">
+                        <h1><b>Detalhes do Pedido</b></h1>
+                        <hr>
+                        <h2>Pedido número 005000</h2>
+                        <br>
+                        <img src="../../img/produtos/Frankenstein_1.jpg" class="img-thumbnail" id="imgProduto">
+                        <br class="clearfix">
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br><br>
+                        <h1>Frankenstein</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non vestibulum ligula. Praesent aliquet neque 
+                            eget dapibus placerat. Aenean consectetur blandit nunc vel aliquet. Nullam id leo eget nulla maximus consectetur. 
+                            Donec dapibus ac tortor quis mattis. Morbi vel purus mi. Suspendisse mattis faucibus tortor ut ullamcorper.
+                            Quisque eu suscipit turpis. Sed vel felis volutpat, molestie ante vel, volutpat lectus.
+                        </p>
+                        <hr>
+                        <h3>Quantidade: 1 unidade</h3>
+                        <h3>Valor total da compra: R$ 59,90</h3>
+                        <hr>
+                    
+                        <h3>Endereço de entrega</h3>
+                        <p>R. Epsum Ipsim</p>
+                        <p>N: 89</p>
+                        <p>Bairro: Jd Feira</p>
+                        <p>Cidade: Baio de oieo</p>
+                        <p>Estado: SP</p>
+                        
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <hr>
+                        <p><img src="../../img/Status.png" class="" id=""></p>
+                        <hr><br>
+                        <div >
+                            <p>
+                                <a href="/minhaconta/pedidos/produto/troca"><button class="btn btn-lg btn-danger" > Solicitar Troca
+                                </button></a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+                
+                
+            </div>
+        </main>
+        <br>
+        <br>
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

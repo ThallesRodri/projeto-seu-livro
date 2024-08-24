@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Instruções Enviadas</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+                <h1 class="mb-3">Instruções Enviadas!</h1>
+                <hr>
+                <p>
+                    Caro cliente,
+                </p>
+                <p>
+                    As instruções para a realização de cadastro de uma nova senha foram enviadas para o email informado.
+                    Abra a mensagem que lhe enviamos e sigas as instruções corretamente para cadastrar uma nova senha.
+                </p>
+                <p>
+                    Agradecemos pela confiança em nossos serviços!
+                </p>
+
+                <p>
+                    <a href="/login" class="btn btn-danger">Voltar à página de Login</a>
+                </p>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro :: Livro</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6">
+                        <% if (livro.id === 1 ) { %>
+                            <img src="../img/produtos/Frankenstein_1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/Frankenstein_1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Frankenstein_destaque.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Frankenstein_2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Frankenstein_4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (livro.id === 2 ) { %>
+                            <img src="../img/produtos/QDD_1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/QDD_1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/QDD_2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/QDD_3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/QDD_4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 3 ) { %>
+                            <img src="../img/produtos/gatoViajante1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/gatoViajante1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/gatoViajante2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/gatoViajante3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/gatoViajante4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 4 ) { %>
+                            <img src="../img/produtos/Tomie_1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/Tomie_1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Tomie_2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Tomie_3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/Tomie_4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 5 ) { %>
+                            <img src="../img/produtos/persepolis1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/persepolis1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/persepolis2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/persepolis3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/persepolis4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 6) { %>
+                            <img src="../img/produtos/moby1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/moby1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/moby2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/moby3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/moby4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 7) { %>
+                            <img src="../img/produtos/metamo1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/metamo1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/metamo2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/metamo3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/metamo4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <% if (livro.id === 8) { %>
+                            <img src="../img/produtos/coraline1.jpg" class="img-thumbnail" id="imgProduto">
+                            <br class="clearfix">
+                            <div class="row my-3 gx-3">
+                                <div class="col-3">
+                                    <img src="../img/produtos/coraline1.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/coraline2.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/coraline3.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+
+                                <div class="col-3">
+                                    <img src="../img/produtos/coraline4.jpg" class="img-thumbnail" onclick="trocarImagem(this)">
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                    
+                    <div class="col-12 col-sm-6">
+                        <h1><%= livro.titulo %></h1>
+                        <p>
+                            <%= livro.sinopse %>
+                        </p>
+                        <hr>
+                        <h2>R$ <%= livro.preco %></h2>
+                        <small class="text-success"><%= livro.quantidade %> unidades em estoque</small>
+                        <hr>
+                        <p>
+                            <button class="btn btn-lg btn-danger" onclick="adicionarCar(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                                </svg> Adicionar ao Carrinho
+                            </button>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <br>
+        <br>
+        <%- include ('partials/footer.ejs') %>
+
+        <script>
+            function trocarImagem(el){
+                var imgProduto = document.getElementById("imgProduto");
+                imgProduto.src = el.src;
+            }
+
+            function adicionarCar(el){
+                window.alert("Produto adicionado ao carrinho");
+            }
+        </script>
+
+    </body>
+
+    <%- include ('partials/footerLinks.ejs') %>

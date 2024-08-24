@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Forma de Pagamento</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        label:hover .text-dark{
+            transition: color 0.2s ease;
+            color: white !important;
+        }
+        label .text-dark{
+            transition: color 0.2s ease;
+        }
+
+        .btn-check:checked+.btn-outline-danger .text-dark,
+        .btn-check:active+.btn-outline-danger .text-dark,
+        .btn-check:hover+.btn-outline-danger .text-dark{
+            transition: color 0.2s ease;
+            color: rgb(255, 255, 255) !important;
+        }
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+                <h1 class="mb-3">Selecione o Pagamento</h1>
+                <hr>
+                <h3 class="mb-4">
+                    Selecione a forma de pagamento e clique em <b>Continuar</b> para prosseguir para a <b>conclusão do pedido.</b>
+                </h3>
+
+                <div class="d-flex justify-content-between flex-wrap border rounded-top pt-4 px-3">
+                    <div class="mb-4 mx-2 flex-even">
+                        
+                        <label class="btn btn-outline-danger p-4 h-100 w-100" id="pague1">
+                            <input type="radio" class="btn-check" name="pagamento" autocomplete="off" for="pague1">
+                            <h3>
+                                <b class="text-dark">Cartão de Crédito</b></h3>
+                                <hr>
+                                <form action="">
+                                    <div class="form-floating mb-3">
+                                        <label for="txtNome" class="text-black-50"><b>Nome impresso no cartão</b></label>
+                                        <input type="text" id="txtNome" class="form-control" autofocus placeholder="Digite seu nome aqui"> 
+                                        
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <label id="txtNumero" class="text-black-50"><b>Número do cartão</b></label>
+                                        <input type="text" for="txtNumero" class="form-control" placeholder="Digite o número do cartão"> 
+                                        
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <label for="txtNome" class="text-black-50"><b>Validade (mm/aa)</b></label>
+                                        <input type="text" id="txtValidade" class="form-control" placeholder="01/24"> 
+                                        
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <label for="txtCodSeg" class="text-black-50"><b>Código de Segurança</b></label>
+                                        <input type="text" id="txtCodSeg" class="form-control" placeholder="Digite o código de segurança do cartão"> 
+                                        
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <label for="selParcelas" class="text-black-50">Parcelas</label>
+                                        <select id="selParcelas" class="form-select">
+                                            <option value="1" selected>À vista</option>
+                                            <option value="2">2x sem juros</option>
+                                            <option value="3">3x sem juros</option>
+                                            <option value="4">4x sem juros</option>
+                                            <option value="5">5x sem juros</option>
+                                        </select>
+                                        
+                                    </div>
+                                </form>
+                            
+                        </label>
+                    </div>
+
+                    <div class="mb-4 mx-2 flex-even">
+                        
+                        <label class="btn btn-outline-danger p-4 h-100 w-100" id="pague2">
+                            <input type="radio" class="btn-check" name="pagamento" autocomplete="off" for="pague2">
+                            <h3>
+                                <b class="text-dark">Boleto</b><br>
+                                <hr>
+                                <form action="">
+
+                                </form>
+                            </h3>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="text-right border border-top-0 rounded-bottom p-4 pb-0">
+                    <a href="/enderecoEntrega" class="btn btn-outline-success btn-lg">voltar para seleção de endereço</a>
+                    <button class="btn btn-danger btn-lg" 
+                            onclick="window.location.href='/enderecoentrega'">Finalizar</button>
+                </div>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

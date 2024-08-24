@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Endereço</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="flex-fill">
+            <div class="container">
+                <h1>Minha Conta</h1>
+                <div class="row gx-3">
+                    <div class="col-4">
+                        <div class="list-group">
+                            <a href="/minhaconta/dadospessoais/1" class="list-group-item list-group-item-action">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                  </svg> Dados Pessoais
+                            </a>
+
+                            <a href="/minhaconta/contato/1" class="list-group-item list-group-item-action ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
+                                    <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z"/>
+                                    <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0"/>
+                                  </svg> Contato
+                            </a>
+
+                            <a href="/minhaconta/endereco/1" class="list-group-item list-group-item-action bg-danger text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+                                  </svg> Endereço
+                            </a>
+
+                            <a href="/minhaconta/pedidos/1" class="list-group-item list-group-item-action">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                    <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+                                  </svg> Pedidos
+                            </a>
+
+                            <a href="/minhaconta/cupons/1" class="list-group-item list-group-item-action">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket" viewBox="0 0 16 16">
+                                    <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z"/>
+                                  </svg> Cupons
+                            </a>
+
+                            <a href="/minhaconta/cartoes/1" class="list-group-item list-group-item-action">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"/>
+                                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"/>
+                                  </svg> Cartões
+                            </a>
+
+                            <a href="/" class="list-group-item list-group-item-action">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+                                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/>
+                                  </svg> Sair
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        
+                        <div class="container" id="">
+                            <h3>Endereços Cadastrados</h3>
+                            <table class="table table-striped table-bordered">
+                                
+                                <thead class="table-danger">
+                                    <tr>
+                                        <th>Nome Endereço</th>
+                                        <th class="text-center">CEP</th>
+                                        <th class="text-end">Categoria Endereço</th>
+                                        <th class="text-center">Editar</th>
+                                        <th class="text-center">Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% cliente.endereco.forEach(endereco  => { %> 
+                                            <tr>
+                                                <td><%= endereco.nomeResi %></td>
+                                                <td class="text-end"><%= endereco.cep %></td>
+                                                <td class="text-end"><%= endereco.tp_endereco %></td>
+                                                <td class="text-center"><a href="/minhaconta/endereco/editar/<%= endereco.id %>"><button>Editar</a></button></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-danger btn-excluir" data-id="<%= endereco.id %>">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                                        </svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                    <% }) %>
+                                </tbody>  
+                            </table>      
+                        </div>
+                        <hr>
+                        <form method="POST" action="/minhaconta/endereco/novo/<%= cliente.id %>">
+                            <div class=" mb-3 col-md-6">
+                                <h3>Cadastrar Novo Endereço</h3>
+                            </div>
+                            <div class="form-floating mb-3 col-md-6 col-lg-4">
+                                <label for="txtCEP">CEP</label>
+                                <input type="text" class="form-control" id="" name="cep">
+                                
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-8">
+                                <p for="" class="form-label">Tipo Residencia</p>
+                                <select class="form-select form-select-sm" name="tp_residencia">
+                                    <option>Casa</option>
+                                    <option>Apto</option>
+                                </select>
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-4">
+                                <label for="" class="form-label">Tipo Logradouro</label>
+                                    <select class="form-select form-select-sm" name="tp_logradouro">
+                                        <option>Rua</option>
+                                        <option>Avenida</option>
+                                    </select>
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-8">
+                                <label for="" class="form-label">Logradouro</label>
+                                <input type="text" class="form-control" id="" name="logradouro">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-2">
+                                <label for="" class="form-label">Número</label>
+                                <input type="text" class="form-control" id="" name="numero">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-8">
+                                <label for="" class="form-label">Bairro</label>
+                                <input type="text" class="form-control" id="" name="bairro">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-8">
+                                <label for="" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="" name="cidade">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-4">
+                                <label for="" class="form-label">Estado</label>
+                                <input type="text" class="form-control" id="" name="estado">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-4">
+                                <label for="" class="form-label">País</label>
+                                <input type="text" class="form-control" id="" name="pais">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-4">
+                                <label for="" class="form-label">Nome da Residência</label>
+                                <input type="text" class="form-control" id="" name="nomeResi" placeholder="Minha Casa">
+                            </div>
+
+                            <div class="form-floating mb-3 col-md-4">
+                                <label for="" class="form-label">Tipo Endereço</label>
+                                <select class="form-select form-select-sm" name="tp_endereco">
+                                    <option value="entrega">Entrega</option>
+                                    <option value="cobrança">Cobrança</option>
+                                </select>
+                            </div> 
+
+                            <div class="form-floating mb-3 col-md-8">
+                                <label for="" class="form-label">Observações</label>
+                                <textarea  class="form-control" type="text" id="" placeholder=" " name="observacoes"> </textarea>
+                                
+                            </div>
+
+                            <div class="col-md-8">
+                                <button class="btn btn-danger btn-lg" type="submit">Adicionar novo endereço</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+        <script>
+           const botoesExcluir = document.querySelectorAll('.btn-excluir');
+
+            // Itera sobre cada botão de exclusão e adiciona um manipulador de evento para o evento de clique
+            botoesExcluir.forEach(botao => {
+                botao.addEventListener('click', async (event) => {
+                    event.preventDefault(); // Previne o comportamento padrão de clicar no link
+
+                    const confirmacao = confirm("Tem certeza de que deseja excluir este endereço?");
+
+                    if (confirmacao) {
+                        const enderecoId = botao.getAttribute('data-id'); // Obtém o ID do endereço do atributo data-id
+                        
+                        try {
+                            // Envia uma requisição DELETE para o servidor
+                            const response = await fetch(`/minhaconta/endereco/delete/${enderecoId}`, {
+                                method: 'DELETE'
+                            });
+
+                            if (response.ok) {
+                                // Se a exclusão for bem-sucedida, redirecione para a página de endereços
+                                window.location.href = '/minhaconta/endereco/1'; // Substitua o URL conforme necessário
+                            } else {
+                                console.error('Erro ao excluir endereço:', response.statusText);
+                                // Aqui você pode lidar com o erro de acordo com sua lógica de aplicativo
+                            }
+                        } catch (error) {
+                            console.error('Erro ao excluir endereço:', error);
+                            // Aqui você pode lidar com o erro de acordo com sua lógica de aplicativo
+                        }
+                    }
+                });
+            });
+        </script>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>
+
+    

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Detalhes Endereço</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+
+                <h2 class="mb-3">Endereço</h2>
+                <hr>
+                
+                <h4><b><%= endereco.nomeResi %></b></h4>
+                <p><b>Tipo do Endereço:</b> <%= endereco.tp_endereco %></p>
+                <p><b>CEP:</b> <%= endereco.cep %>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Tipo de Residencia:</b> <%= endereco.tp_residencia %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Tipo de Logradouro:</b> <%= endereco.tp_logradouro %></p>
+                <p><b>Logradouro:</b> <%= endereco.logradouro %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Número:</b> <%= endereco.numero %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Bairro:</b> <%= endereco.bairro %></p>
+                <p><b>Cidade:</b> <%= endereco.cidade %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Estado:</b> <%= endereco.estado %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>País:</b> <%= endereco.pais %></p>
+                <br>
+                <hr>
+
+                <h2 class="mb-3">Editar Endereço</h2>
+                <form action="/minhaconta/endereco/update/<%= endereco.id %>" method="POST">
+                    <fieldset class="row">
+                        <legend>Endereço</legend>
+                        <div class="mb-3 col-md-6 col-lg-4">
+                            <label for="" class="form-label">CEP</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="" name="cep">
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <p for="" class="form-label">Tipo Residencia</p>
+                            <select class="form-select form-select-sm" name="tp_residencia">
+                                <option>Casa</option>
+                                <option>Apto</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">Tipo Logradouro</label>
+                            <select class="form-select form-select-sm" name="tp_logradouro">
+                                <option>Rua</option>
+                                <option>Avenida</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="" name="logradouro">
+                        </div>
+
+                        <div class="mb-3 col-md-3">
+                            <label for="" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="" name="numero">
+                        </div>
+
+
+                        <div class="mb-3 col-md-8">
+                            <label for="" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="" name="bairro">
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="" name="cidade">
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="" name="estado">
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">País</label>
+                            <input type="text" class="form-control" id="" name="pais">
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">Nome da Residência</label>
+                            <input type="text" class="form-control" id="" name="nomeResi" placeholder="Minha Casa">
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <label for="" class="form-label">Tipo Endereço</label>
+                            <select class="form-select form-select-sm" name="tp_endereco">
+                                <option value="entrega">Entrega</option>
+                                <option value="cobrança">Cobrança</option>
+                            </select>
+                        </div> 
+                        
+                        <div class="mb-3 col-md-8">
+                            <label for="" class="form-label">Observações</label>
+                            <textarea  class="form-control" type="text" id="" placeholder=" " name="observacoes"> </textarea>
+                        </div>
+
+                    </fieldset>
+                    <p><button type="submit" class="btn btn-danger btn-lg">Salvar</button></p>
+                </form>
+                <p><a href="/minhaconta/endereco/<%= endereco.clienteId %>" ><button  class="btn btn-danger btn-lg">Voltar</button></a></p>
+                <br>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Cadastro</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbar.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+
+            <% if (errorMessage) { %>
+                <script>
+                    alert('<%= errorMessage %>'); // Exibe um pop-up com a mensagem de erro
+                </script>
+            <% } %>
+
+            <div class="container">
+                <h1>Informe seus dados</h1>
+                <hr>
+
+                <form method="POST" action="/cliente/save">
+                    <div class="row">
+
+                        <div class="col-sm-12 col-md-6">
+                            <fieldset class="row">
+                                <legend>Dados Pessoais</legend>
+                                <div class="mb-3 col-md-9">
+                                    <label for="txtNome"  class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="txtNome" name="nome">
+                                </div>
+
+                                <div class="mb-3 col-md-5 ">
+                                    <label for="txtCPF" class="form-label">CPF</label>
+                                    <input type="text" class="form-control" id="txtCPF" placeholder="99999999999" name="cpf">
+                                    
+                                </div>
+
+                                <div class="mb-3 col-md-4 ">
+                                    <label for="txtDataNascimento" class="form-label">Data de Nascimento</label>
+                                    <input type="date" class="form-control" id="txtDataNascimento" name="data_nascimento">
+                                </div>
+                                
+                              
+                                <div class="mb-3 col-md-4 mt-2">    
+                                    <label for="txtSexo" class="form-label">Sexo</label>
+                                    <select class="form-select form-select-sm" name="sexo">
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="O">Outros</option>
+                                    </select>
+                                </div>
+                                
+                            </fieldset>
+
+                            <fieldset class="row">
+                                <legend>Contatos</legend>
+                                <div class="mb-3 col-md-6">
+                                    <label for="txtEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="txtEmail" name="email">
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="txtTpTel" class="form-label">Tipo Telefone</label>
+                                    <select class="form-select form-select-sm" name="tipo_tel">
+                                        <option value="celular">Celular</option>
+                                        <option value="fixo">Fixo</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-3">
+                                    <label for="txtTelefone" class="form-label">DDD</label>
+                                    <input type="tel" class="form-control" id="txtTelefone" placeholder="11" name="ddd">
+                                </div>
+
+                                <div class="mb-3 col-md-5">
+                                    <label for="txtTelefone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" id="txtTelefone" placeholder="99999999" name="numero_tel">
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <fieldset class="row">
+                                <legend>Endereço</legend>
+                                <div class="mb-3 col-md-6 col-lg-4">
+                                    <label for="" class="form-label">CEP</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="" name="cep">
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <p for="" class="form-label">Tipo Residencia</p>
+                                    <select class="form-select form-select-sm" name="tp_residencia">
+                                        <option>Casa</option>
+                                        <option>Apto</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Tipo Logradouro</label>
+                                    <select class="form-select form-select-sm" name="tp_logradouro">
+                                        <option>Rua</option>
+                                        <option>Avenida</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-8">
+                                    <label for="" class="form-label">Logradouro</label>
+                                    <input type="text" class="form-control" id="" name="logradouro">
+                                </div>
+
+                                <div class="mb-3 col-md-3">
+                                    <label for="" class="form-label">Número</label>
+                                    <input type="text" class="form-control" id="" name="numero">
+                                </div>
+
+
+                                <div class="mb-3 col-md-8">
+                                    <label for="" class="form-label">Bairro</label>
+                                    <input type="text" class="form-control" id="" name="bairro">
+                                </div>
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="" name="cidade">
+                                </div>
+
+                                <div class="mb-3 col-md-5">
+                                    <label for="txtEstado" class="form-label">Estado</label>
+                                    <select class="form-select form-select-sm" name="estado">
+                                        <option value="AC">ACRE</option>
+                                        <option value="AL">ALAGOAS</option>
+                                        <option value="AP">AMAPA</option>
+                                        <option value="AM">AMAZONAS</option>
+                                        <option value="BA">BAHIA</option>
+                                        <option value="CE">CEARA</option>
+                                        <option value="DF">DISTRITO FEDERAL</option>
+                                        <option value="ES">ESPIRITO SANTO</option>
+                                        <option value="GO">GOIAS</option>
+                                        <option value="MA">MARANHÃO</option>
+                                        <option value="MT">MATO GROSSO</option>
+                                        <option value="MS">MATO GROSSO DO SUL</option>
+                                        <option value="MG">MINAS GERAIS</option>
+                                        <option value="PA">PARA</option>
+                                        <option value="PB">PARAIBA</option>
+                                        <option value="PR">PARANA</option>
+                                        <option value="PE">PERNAMBUCO</option>
+                                        <option value="PI">PIAUI</option>
+                                        <option value="RJ">RIO DE JANEIRO</option>
+                                        <option value="RN">RIO GRANDE DO NORTE</option>
+                                        <option value="RS">RIO GRANDE DO SUL</option>
+                                        <option value="RO">RONDONIA</option>
+                                        <option value="RR">RORAIMA</option>
+                                        <option value="SC">SANTA CATARINA</option>
+                                        <option value="SP">SÃO PAULO</option>
+                                        <option value="SE">SERGIPE</option>
+                                        <option value="TO">TOCANTINS</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-2">
+                                    <!-- <label for="" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="" name="pais"> -->
+                                    <label for="txtPais" class="form-label">Pais</label>
+                                    <select class="form-select form-select-sm" name="pais">
+                                        <option value="BRASIL">BRASIL</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Nome da Residência</label>
+                                    <input type="text" class="form-control" id="" name="nomeResi" placeholder="Minha Casa">
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Tipo Endereço</label>
+                                    <select class="form-select form-select-sm" name="tp_endereco">
+                                        <option value="entrega">Entrega</option>
+                                        <option value="cobrança">Cobrança</option>
+                                    </select>
+                                </div> 
+                                
+                                <div class="mb-3 col-md-8">
+                                    <label for="" class="form-label">Observações</label>
+                                    <textarea  class="form-control" type="text" id="" placeholder=" "  name="observacoes"> </textarea>
+                                </div>
+
+                                
+
+                                <!-- <div class="mb-3 col-md-6">
+                                    <input type="checkbox" class="form-check-input" value="" id="chkPromocoes">
+                                    <label for="chkPromocoes" class="form-check-label">Endereço de Entrega? (Deverá ser criado um endereço de 
+                                        cobrança em seu perfil)</label>
+                                </div> -->
+                            </fieldset>
+                            <hr>
+
+                            <!-- <fieldset class="row">
+                                <legend>Endereço Cobrança</legend>
+                                <div class="mb-3 col-md-6 col-lg-4">
+                                    <label for="" class="form-label">CEP</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="" name="cep">
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <p for="" class="form-label">Tipo Residencia</p>
+                                    <select class="form-select form-select-sm" name="tp_residencia">
+                                        <option>Casa</option>
+                                        <option>Apto</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Tipo Logradouro</label>
+                                    <select class="form-select form-select-sm" name="tp_logradouro">
+                                        <option>Rua</option>
+                                        <option>Avenida</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-8">
+                                    <label for="" class="form-label">Logradouro</label>
+                                    <input type="text" class="form-control" id="" name="logradouro">
+                                </div>
+
+                                <div class="mb-3 col-md-3">
+                                    <label for="" class="form-label">Número</label>
+                                    <input type="text" class="form-control" id="" name="numero">
+                                </div>
+
+
+                                <div class="mb-3 col-md-8">
+                                    <label for="" class="form-label">Bairro</label>
+                                    <input type="text" class="form-control" id="" name="bairro">
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="" name="cidade">
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">Estado</label>
+                                    <input type="text" class="form-control" id="" name="estado">
+                                </div>
+
+                                <div class="mb-3 col-md-4">
+                                    <label for="" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="" name="pais">
+                                </div>
+
+                                <div class="mb-3 col-md-8">
+                                    <label for="txtBairro" class="form-label">Observações</label>
+                                    <textarea  class="form-control" type="text" id="txtMotivo" placeholder=" " autofocus name="observacoes"> </textarea>
+                                </div>
+
+                                <div class="mb-3 col-md-4 d-none">
+                                    <label for="txtTpResidencia" class="form-label">Tipo Endereço</label>
+                                    <select class="form-select form-select-sm" name="tp_endereco">
+                                        <option value="cobrança">Cobrança</option>
+                                        <option value="cobrança">Cobrança</option>
+                                    </select>
+                                </div>
+
+
+                            </fieldset> -->
+
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <div class="text-right mb-5">
+                        <a class="btn btn-light btn-outline-danger" href="/">Cancelar</a>
+                        <input type="submit" value="Criar meu cadastro!" class="btn btn-danger" onclick="">
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

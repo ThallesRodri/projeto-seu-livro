@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro  :: Detalhes Cliente</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p.truncate-3l{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+
+    <body style="min-width:372px;">
+
+        <%- include ('../partials/navbarAdm.ejs') %>
+
+
+        <main class="mb-5 pb-5 mb-md-0">
+            <div class="container">
+                <h2 class="mb-3">Dados do Cliente</h2>
+                <hr>
+                <p><b>ID:</b> <%= cliente.id %>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <b>Nome:</b> <%= cliente.nome %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <b>CPF:</b>  <%= cliente.cpf %>  </p>
+                <p><b>Data de Nascimento:</b> <%= formatarData(cliente.data_nascimento) %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  <b>Sexo:</b><% if ( cliente.sexo == 'M') { %> Masculino <%}else{%> Feminino <%}%> </p>
+                <br>
+
+                <h2 class="mb-3">Informações de Contato</h2>
+                <hr>
+                <p><b>Email:</b> <%= cliente.email %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <b>Tipo de Telefone:</b> <%= cliente.tipo_tel %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>DDD:</b> <%= cliente.ddd%> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Número:</b> <%= cliente.numero_tel%></p>
+                <br>
+
+                <h2 class="mb-3">Endereços</h2>
+                <hr>
+                <% cliente.endereco.forEach(endereco  => { %> 
+                    <p><b>Tipo do Endereço:</b> <%= endereco.tp_endereco %></p>
+                    <p><b>CEP:</b> <%= endereco.cep %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Nome da Residencia:</b> <%= endereco.nomeResi %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Tipo de Residencia:</b> <%= endereco.tp_residencia %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Tipo de Logradouro:</b> <%= endereco.tp_logradouro %></p>
+                    <p><b>Logradouro:</b> <%= endereco.logradouro %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Número:</b> <%= endereco.numero %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Bairro:</b> <%= endereco.bairro %></p>
+                    <p><b>Cidade:</b> <%= endereco.cidade %> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>Estado:</b> <%= endereco.estado %>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<b>País:</b> <%= endereco.pais %></p>
+                    
+                    <hr>
+                <% }) %>
+                <h2 class="mb-3">Transações</h2>
+                <hr>
+                <table class="table table-striped table-bordered">
+                            
+                    <thead class="table-danger">
+                        <tr>
+                            <th>ID</th>
+                            <th class="text-center">ID Produto</th>
+                            <th class="text-end">Nome Produto</th>
+                            <th class="text-center">Valor Transação</th>
+                            <th class="text-center">Data Compra</th>
+                            <th class="text-center">Troca</th>
+                            <th class="text-center">Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="text-end">5</td>
+                            <td class="text-end">Frankenstein</td>
+                            <td class="text-end">R$59,90</td>
+                            <td class="text-end">22/02/2024</td>
+                            <td class="text-end">N</td>
+                            <td class="text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>  
+                </table>
+
+                <p><a href="/adm/areaadm" class="btn btn-danger btn-lg">Voltar a área adm</a></p>
+                <br>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer.ejs') %>
+
+    </body>
+
+    <%- include ('../partials/footerLinks.ejs') %>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeuLivro :: Carrinho de Compras</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        p.truncate-3l {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body style="min-width:372px;">
+    <%- include ('../partials/navbar.ejs') %>
+
+    <main class="mb-5 pb-5 mb-md-0">
+        <div class="container">
+            <h1 class="mb-3">Carrinho de Compras</h1>
+            <hr>
+            <ul class="list-group mb-3">
+                <% let total = 0; %>
+                <% itensCarrinho.forEach(item => { %>
+                <% total += item.quantidade * item.Livro.preco; %>
+                <li class="list-group-item py-3">
+                    <div class="row g-3">
+                        <div class="col-4 col-md-3 col-lg-2">
+                            <a href="/produto/<%= item.Livro.id %>">
+                                <img src="<%= item.Livro.imagem %>" class="img-thumbnail">
+                            </a>
+                        </div>
+                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                            <h4><b><a href="/produto/<%= item.Livro.id %>" class="text-decoration-none text-danger"><%= item.Livro.titulo %></a></b></h4>
+                            <h4>
+                                <small><%= item.Livro.descricao %></small>
+                            </h4>
+                        </div>
+                        <div class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt3">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-outline-dark btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                        <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+                                    </svg>
+                                </button>
+                                <input type="text" class="form-control text-center border-dark" value="<%= item.quantidade %>">
+                                <button type="button" class="btn btn-outline-dark btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+                                        <path d="M3.204 11h9.592L8 5.519zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger border-dark btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zM8 6a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6A.5.5 0 0 1 8 6zm2 .5a.5.5 0 0 1 .5-.5h.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6zm-1-4A1.5 1.5 0 0 1 10.5 3h-5A1.5 1.5 0 0 1 4 1.5v-1h8v1A1.5 1.5 0 0 1 10.5 2zM4.5 0A.5.5 0 0 0 4 0v1h8V0A.5.5 0 0 0 11.5 0h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="text-end mt-2">
+                                <small class="text-secondary">Valor unitário: R$ <%= item.Livro.preco.toFixed(2) %></small><br>
+                                <span class="text-dark">Valor Item: R$ <%= (item.quantidade * item.Livro.preco).toFixed(2) %></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <% }) %>
+                <li class="list-group-item py-3">
+                    <div class="text-end">
+                        <h4 class="text-dark mb-3">
+                            Valor Total: R$ <%= total.toFixed(2) %>
+                        </h4>
+                        <a href="#" class="btn btn-outline-success btn-lg">
+                            Fechar Compra
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <h2 class="mb-3">Receba Nossas Promoções</h2>
+            <hr>
+            <form class="card p-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="seuemail@exemplo.com">
+                    <button type="submit" class="btn btn-secondary">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- include ('../partials/footer.ejs') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzPBESw3sP2QQD2XRHaE/qU6xrY6DpR1aoBz0+QNbF8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cu2oC0WojK5EpXlQ6b75t0rmNYE6mL4/ELiXGVs9PjUaO2u5dEK15f+kP3tBQGTN" crossorigin="anonymous"></script>
+</body>
+</html>
